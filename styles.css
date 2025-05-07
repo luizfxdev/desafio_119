@@ -1,0 +1,259 @@
+/* Estilo original mantido */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    color: #e0e0e0;
+    position: relative;
+    background: #000;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/background2.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+.container {
+    width: auto;
+    max-width: 500px;
+    min-width: unset;
+    height: auto;
+    padding: 2rem;
+    margin: 2rem;
+    margin-right: auto; /* Alinha à esquerda */
+    background-color: rgba(9, 8, 25, 0.9);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+}
+
+.content {
+    max-width: 100%;
+    margin: 0;
+}
+
+.title {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.5);
+    text-align: center;
+}
+
+.description {
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #c0c0c0;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 200, 220, 0.2);
+    background-color: rgba(4, 8, 20, 0.6);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #0f2bff;
+    box-shadow: 0 0 0 2px rgba(15, 43, 255, 0.3);
+}
+
+.buttons-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+/* PARTE CORRIGIDA PARA ANIMAÇÃO */
+.glow-on-hover {
+    width: 180px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.glow-on-hover:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/* Efeito azul para DESVENDAR */
+.blue-glow:before {
+    background: linear-gradient(45deg, #0061ff, #00d0ff, #0062ff, #00f7ff, #0051ff, #00a6ff, #002bff, #0080ff, #0061ff);
+    background-size: 400%;
+    animation: glowing 20s linear infinite;
+}
+
+.blue-glow:active {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Efeito vermelho para RETORNAR */
+.red-glow:before {
+    background: linear-gradient(45deg, #ff0000, #ff6a00, #ff0000, #ff3c00, #ff0000, #ff8a00, #ff0000, #ff5100, #ff0000);
+    background-size: 400%;
+    animation: glowing 20s linear infinite;
+}
+
+.red-glow:active {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* FIM DA PARTE CORRIGIDA */
+
+.result-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: rgba(4, 8, 20, 0.6);
+    border: 1px solid rgba(200, 200, 220, 0.1);
+}
+
+.result-label {
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.result-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    word-break: break-all;
+    min-height: 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 1rem auto; /* Centraliza em telas menores */
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+    }
+    
+    .glow-on-hover {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 1.2rem;
+    }
+    
+    .title {
+        font-size: 1.4rem;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+    }
+    
+    .buttons-container {
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torre dos Feiticeiros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lora:wght@500&family=Hind+Madurai:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Torre dos Feiticeiros</h1>
+            <p class="description">Encontre a Palavra do Poder combinando as palavras mágicas</p>
+            
+            <div class="input-group">
+                <label for="palavras-input" class="input-label">Insira as palavras mágicas (separadas por vírgula):</label>
+                <input type="text" id="palavras-input" class="input-field" placeholder="Ex: magia,dragão,elfo">
+            </div>
+            
+            <div class="buttons-container">
+                <button id="desvendar-btn" class="glow-on-hover blue-glow" type="button">DESVENDAR</button>
+                <button id="retornar-btn" class="glow-on-hover red-glow" type="button">RETORNAR</button>
+            </div>
+            
+            <div class="result-container">
+                <label class="result-label">Palavra do Poder:</label>
+                <div id="resultado" class="result-value">...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
